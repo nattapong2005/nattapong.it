@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# โครงการ Portfolio (Portfolio Project)
 
-## Getting Started
+นี่คือโปรเจกต์เว็บไซต์ Portfolio ส่วนตัวที่พัฒนาด้วย [Next.js](https://nextjs.org/) ซึ่งสร้างขึ้นโดยใช้ [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)
 
-First, run the development server:
+## คุณสมบัติหลัก (Features)
+
+โปรเจกต์นี้ประกอบด้วยส่วนประกอบต่างๆ ที่จำเป็นสำหรับ Portfolio:
+- **Hero Section**: ส่วนแนะนำตัวที่โดดเด่น
+- **Projects**: แสดงผลงานและโปรเจกต์ที่เคยทำ
+- **Skills & Tech Stack**: รายการทักษะทางเทคนิคและเทคโนโลยีที่เชี่ยวชาญ
+- **Experience & Education**: ประวัติการทำงานและการศึกษา
+- **Certifications & Activities**: ใบเซอร์ติฟิเกตและกิจกรรมต่างๆ
+- **Contact**: แบบฟอร์มหรือข้อมูลการติดต่อ
+- **Visual Enhancements**: มีการใช้ Ambient Glow และ Particle Background เพื่อความสวยงาม
+
+## เทคโนโลยีที่ใช้ (Tech Stack)
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: พัฒนาขึ้นเอง (Custom Components)
+
+## เริ่มต้นใช้งาน (Getting Started)
+
+ก่อนอื่นให้ติดตั้ง dependencies:
+
+```bash
+npm install
+```
+
+จากนั้น รันเซิร์ฟเวอร์สำหรับการพัฒนา (development server):
 
 ```bash
 npm run dev
-# or
+# หรือ
 yarn dev
-# or
+# หรือ
 pnpm dev
-# or
+# หรือ
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด [http://localhost:3000](http://localhost:3000) ด้วยเบราว์เซอร์ของคุณเพื่อดูผลลัพธ์
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## การปรับแต่ง (Customization)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+คุณสามารถเริ่มแก้ไขหน้าหลักได้โดยการปรับปรุงไฟล์ใน `src/app/page.tsx` และส่วนประกอบต่างๆ ในโฟลเดอร์ `src/components/`
 
-## Learn More
+## การสร้างโปรเจกต์สำหรับ Production (Build)
 
-To learn more about Next.js, take a look at the following resources:
+สำหรับการสร้างโปรเจกต์เพื่อนำไปใช้งานจริง:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+และใช้คำสั่งนี้เพื่อเริ่มเซิร์ฟเวอร์:
 
-## Deploy on Vercel
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+สร้างขึ้นด้วย ❤️ โดยใช้ Next.js
