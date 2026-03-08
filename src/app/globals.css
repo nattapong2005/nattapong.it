@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #a855f7;
+  /* Purple 500 */
+  --color-secondary: #d946ef;
+  /* Fuchsia 500 */
+  --color-dark: #09090b;
+  /* Zinc 950 (Vantablack-like Dark) */
+  --color-surface: #171717;
+  /* Zinc 900 */
+  --color-surfaceHover: #262626;
+  /* Zinc 800 */
+
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce-slow {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-bounce-slow-delayed {
+  animation: bounce-slow 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-fade-in {
+  animation: fade-in-down 0.5s ease-out forwards;
+}
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: #f8fafc;
+}
+
+/* Subtle Grid Background for that "IT" feel */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+}
+
+/* Glass / Bento Box Style - Minimal Edition */
+.bento-card {
+  background: rgba(18, 18, 20, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  border-color: rgba(168, 85, 247, 0.2);
+  background: rgba(22, 22, 26, 0.8);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, #c084fc, #f472b6);
+  /* Purple 400 to Pink 400 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surfaceHover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Dynamic Animation Delays */
+.animate-fade-in-up {
+  opacity: 0;
+  animation: var(--animate-fade-in-up);
+}
+
+@layer utilities {
+  .slide-up {
+    opacity: 0;
+  }
+}
