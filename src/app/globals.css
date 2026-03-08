@@ -94,7 +94,6 @@
 }
 
 * {
-  scroll-behavior: smooth;
   font-family: "Noto Sans Thai", sans-serif;
 }
 
@@ -112,11 +111,31 @@ body {
 
 /* Glass / Bento Box Style - Minimal Edition */
 .bento-card {
+  position: relative;
   background: rgba(18, 18, 20, 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  /* เพื่อให้แสงไม่หลุดออกนอกการ์ด */
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+      rgba(168, 85, 247, 0.15),
+      transparent 40%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
 }
 
 .bento-card:hover {
@@ -162,5 +181,36 @@ body {
 @layer utilities {
   .slide-up {
     opacity: 0;
+  }
+
+  /* Text Reveal Styles */
+  .reveal-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    /* เปลี่ยนเป็น top เพื่อให้สระบนไม่โดนตัด */
+    padding-bottom: 0.1em;
+    /* เพิ่มพื้นที่ล่างสำหรับสระอุ/อู */
+    margin-bottom: -0.1em;
+    padding-top: 0.2em;
+    /* เพิ่มพื้นที่บนสำหรับวรรณยุกต์ */
+    margin-top: -0.2em;
+  }
+
+  .reveal-item {
+    display: inline-block;
+    will-change: transform;
+    transform: translateY(110%);
+    animation: reveal-up 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+
+  @keyframes reveal-up {
+    0% {
+      transform: translateY(110%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
   }
 }

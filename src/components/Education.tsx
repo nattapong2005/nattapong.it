@@ -54,7 +54,7 @@ const Education = () => {
             </p>
             <div className="flex items-center gap-4">
               <span className="text-[10px] font-bold text-slate-400 px-2 py-0.5 bg-white/5 rounded border border-white/10">
-                GPAX: 3.85
+                GPAX: 3.81
               </span>
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
                 2021 - 2023

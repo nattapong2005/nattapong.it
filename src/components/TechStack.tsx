@@ -6,45 +6,45 @@ const TechStack = () => {
       title: "Languages",
       icon: "fas fa-code",
       techs: [
-        { name: "JavaScript", icon: "fab fa-js" },
-        { name: "TypeScript", icon: "fab fa-js" },
-        { name: "PHP", icon: "fab fa-php" },
-        { name: "Java", icon: "fab fa-java" },
-        { name: "C++", icon: "fas fa-code" },
-        { name: "Python", icon: "fab fa-python" },
+        { name: "JavaScript", icon: "fab fa-js", color: "#F7DF1E" },
+        { name: "TypeScript", icon: "fab fa-js", color: "#3178C6" },
+        { name: "PHP", icon: "fab fa-php", color: "#777BB4" },
+        { name: "Java", icon: "fab fa-java", color: "#007396" },
+        { name: "C++", icon: "fas fa-code", color: "#00599C" },
+        { name: "Python", icon: "fab fa-python", color: "#3776AB" },
       ],
     },
     {
       title: "Frontend",
       icon: "fas fa-window-maximize",
       techs: [
-        { name: "React", icon: "fab fa-react" },
-        { name: "Next.js", icon: "fas fa-n" },
-        { name: "Vue.js", icon: "fab fa-vuejs" },
-        { name: "Tailwind", icon: "fas fa-wind" },
-        { name: "Bootstrap", icon: "fab fa-bootstrap" },
+        { name: "React.js", icon: "fab fa-react", color: "#61DAFB" },
+        { name: "Next.js", icon: "fas fa-n", color: "#FFFFFF" },
+        { name: "Vue.js", icon: "fab fa-vuejs", color: "#4FC08D" },
+        { name: "Tailwind", icon: "fas fa-wind", color: "#06B6D4" },
+        { name: "Bootstrap", icon: "fab fa-bootstrap", color: "#7952B3" },
       ],
     },
     {
       title: "Backend & Database",
       icon: "fas fa-server",
       techs: [
-        { name: "Node.js", icon: "fab fa-node-js" },
-        { name: "Express", icon: "fas fa-server" },
-        { name: "MySQL", icon: "fas fa-database" },
-        { name: "MongoDB", icon: "fas fa-leaf" },
-        { name: "Firebase", icon: "fas fa-fire" },
+        { name: "Node.js", icon: "fab fa-node-js", color: "#339933" },
+        { name: "Express", icon: "fas fa-server", color: "#A9A9A9" },
+        { name: "MySQL", icon: "fas fa-database", color: "#4479A1" },
+        { name: "MongoDB", icon: "fas fa-leaf", color: "#47A248" },
+        { name: "Firebase", icon: "fas fa-fire", color: "#FFCA28" },
       ],
     },
     {
       title: "Tools & Design",
       icon: "fas fa-tools",
       techs: [
-        { name: "Git", icon: "fab fa-github" },
-        { name: "Figma", icon: "fab fa-figma" },
-        { name: "Photoshop", icon: "fas fa-image" },
-        { name: "Vercel", icon: "fas fa-caret-up" },
-        { name: "Docker", icon: "fab fa-docker" },
+        { name: "Git", icon: "fab fa-github", color: "#F05032" },
+        { name: "Figma", icon: "fab fa-figma", color: "#F24E1E" },
+        { name: "Photoshop", icon: "fas fa-image", color: "#31A8FF" },
+        { name: "Vercel", icon: "fas fa-caret-up", color: "#FFFFFF" },
+        { name: "Docker", icon: "fab fa-docker", color: "#2496ED" },
       ],
     },
   ];
@@ -64,14 +64,19 @@ const TechStack = () => {
             <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
               {category.title}
             </h4>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               {category.techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-3 group cursor-default"
+                  className="flex items-center gap-4 group cursor-default"
                 >
-                  <i className={`${tech.icon} text-slate-600 group-hover:text-primary transition-colors text-sm w-5 text-center`}></i>
-                  <span className="text-xs text-slate-400 group-hover:text-slate-200 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-white/10 transition-colors">
+                    <i
+                      className={`${tech.icon} text-sm`}
+                      style={{ color: tech.color }}
+                    ></i>
+                  </div>
+                  <span className="text-xs text-slate-400 group-hover:text-slate-200 transition-colors font-medium">
                     {tech.name}
                   </span>
                 </div>

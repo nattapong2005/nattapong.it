@@ -4,7 +4,7 @@ const PersonalInfo = () => {
   return (
     <>
       {/* Personal Detail Box */}
-      <div className="bento-card slide-up col-span-1 p-8 flex flex-col justify-between group overflow-hidden bg-transparent/20">
+      <div className="bento-card slide-up col-span-1 p-10 flex flex-col justify-between group overflow-hidden bg-transparent/20">
         <div>
           <div className="w-10 h-10 rounded-full bg-white/5 text-slate-400 flex items-center justify-center text-lg mb-8 border border-white/10">
             <i className="fas fa-id-card"></i>
@@ -12,7 +12,7 @@ const PersonalInfo = () => {
           <h3 className="text-white font-medium text-base mb-6">
             Basic Information
           </h3>
-          <ul className="space-y-5">
+          <ul className="space-y-6">
             <li className="flex flex-col gap-1">
               <span className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">Age</span>
               <span className="text-sm text-slate-300">20 Years Old</span>
@@ -38,7 +38,7 @@ const PersonalInfo = () => {
       </div>
 
       {/* Hobbies Box */}
-      <div className="bento-card slide-up col-span-1 p-8 flex flex-col justify-between group overflow-hidden bg-transparent/20">
+      <div className="bento-card slide-up col-span-1 p-10 flex flex-col justify-between group overflow-hidden bg-transparent/20">
         <div>
           <div className="w-10 h-10 rounded-full bg-white/5 text-slate-400 flex items-center justify-center text-lg mb-8 border border-white/10">
             <i className="fas fa-heart"></i>

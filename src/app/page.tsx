@@ -42,8 +42,23 @@ export default function Home() {
       observer.observe(el);
     });
 
+    const handleMouseMove = (e: MouseEvent) => {
+      const cards = document.querySelectorAll(".bento-card");
+      cards.forEach((card) => {
+        const rect = (card as HTMLElement).getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+        (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
       observer.disconnect();
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -53,8 +68,8 @@ export default function Home() {
       <AmbientGlow />
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-6 sm:px-12 pt-20 pb-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 auto-rows-[minmax(180px,auto)]">
+      <main className="max-w-7xl mx-auto px-6 sm:px-12 pt-40 pb-32 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 auto-rows-[minmax(200px,auto)]">
           <Hero />
           <Experience />
           <PersonalInfo />

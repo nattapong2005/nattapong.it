@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Thai } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const notoSansThai = Noto_Sans_Thai({
   variable: "--font-noto-sans-thai",
