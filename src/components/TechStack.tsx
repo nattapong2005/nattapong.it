@@ -45,6 +45,7 @@ const TechStack = () => {
         { name: "Photoshop", icon: "fas fa-image", color: "#31A8FF" },
         { name: "Vercel", icon: "fas fa-caret-up", color: "#FFFFFF" },
         { name: "Docker", icon: "fab fa-docker", color: "#2496ED" },
+        { name: "Ubuntu", icon: "fab fa-ubuntu", color: "#E95420" },
       ],
     },
   ];

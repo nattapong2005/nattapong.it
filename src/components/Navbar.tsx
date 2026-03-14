@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Navbar = () => {
+const Navbar = ({ onOpenTerminal }: { onOpenTerminal: () => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSegment, setActiveSegment] = useState("#profile");
@@ -93,18 +93,16 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <a
-              href="mailto:azzzx30089@gmail.com"
-              className={`group relative flex items-center justify-center bg-white text-dark rounded-full font-black uppercase tracking-wider overflow-hidden transition-all duration-500 ${scrolled ? 'w-10 h-10' : 'px-8 py-3 text-xs'
-                }`}
+            {/* Linux Terminal Trigger - Desktop */}
+            <button
+              onClick={onOpenTerminal}
+              className={`group flex items-center justify-center bg-white/5 hover:bg-white/10 text-white rounded-full border border-white/10 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] ${scrolled ? 'w-10 h-10' : 'px-5 py-3 gap-3 text-[10px]'}`}
+              title="Open Terminal"
             >
-              <span className={`transition-all duration-500 ${scrolled ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}`}>
-                Connect
-              </span>
-              <div className={`absolute transition-all duration-500 ${scrolled ? 'opacity-100 scale-110' : 'opacity-0 rotate-45 translate-x-4'}`}>
-                <i className="fas fa-paper-plane text-xs"></i>
-              </div>
-            </a>
+              <i className="fas fa-terminal"></i>
+              {!scrolled && <span className="font-bold uppercase tracking-widest">Shell</span>}
+            </button>
+
 
             {/* Futuristic Menu Button */}
             <button
@@ -155,13 +153,24 @@ const Navbar = () => {
 
               <div className="h-[1px] bg-white/5 my-4"></div>
 
-              <a
-                href="mailto:azzzx30089@gmail.com"
-                className="w-full py-6 rounded-xl bg-gradient-to-r from-primary to-secondary text-center text-white font-black uppercase tracking-[0.2em] shadow-xl"
-                onClick={() => setIsOpen(false)}
+              {/* Terminal Trigger - Mobile */}
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  onOpenTerminal();
+                }}
+                className="w-full flex items-center gap-5 p-5 rounded-xl bg-primary/10 border border-primary/20 transition-all group mb-4"
               >
-                Let's Talk
-              </a>
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <i className="fas fa-terminal text-lg"></i>
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-lg font-bold text-white uppercase tracking-tight">Launch Terminal</span>
+                  <span className="text-[10px] text-primary/70 uppercase tracking-widest font-bold">Interactive Shell</span>
+                </div>
+                <i className="fas fa-chevron-right ml-auto text-primary"></i>
+              </button>
+
             </div>
           </div>
         </div>

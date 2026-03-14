@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
@@ -14,11 +14,14 @@ import Certifications from "@/components/Certifications";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import LinuxTerminal from "@/components/LinuxTerminal";
 import ParticleBackground from "@/components/ParticleBackground";
 import AmbientGlow from "@/components/AmbientGlow";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+
   useEffect(() => {
     const elements = document.querySelectorAll(".slide-up");
 
@@ -66,7 +69,7 @@ export default function Home() {
     <>
       <ParticleBackground />
       <AmbientGlow />
-      <Navbar />
+      <Navbar onOpenTerminal={() => setIsTerminalOpen(true)} />
 
       <main className="max-w-7xl mx-auto px-6 sm:px-12 pt-40 pb-32 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 auto-rows-[minmax(200px,auto)]">
@@ -86,6 +89,7 @@ export default function Home() {
 
       <Footer />
       <ScrollToTop />
+      <LinuxTerminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
     </>
   );
 }

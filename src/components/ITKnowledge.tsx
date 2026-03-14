@@ -33,11 +33,11 @@ const ITKnowledge = () => {
 
         <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-emerald-500/5 hover:border-emerald-500/20 transition-all group">
           <div className="w-10 h-10 rounded-xl bg-dark/40 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-            <i className="fas fa-cloud-upload-alt text-lg opacity-80"></i>
+            <i className="fab fa-linux text-lg opacity-80"></i>
           </div>
           <div>
-            <h4 className="text-sm font-bold text-slate-200">Cloud & Deployment</h4>
-            <p className="text-[11px] text-slate-500 uppercase tracking-widest mt-1">AWS / Vercel / Nginx / Docker</p>
+            <h4 className="text-sm font-bold text-slate-200">Linux System Administration</h4>
+            <p className="text-[11px] text-slate-500 uppercase tracking-widest mt-1">Ubuntu / Debian / Bash / Nginx</p>
           </div>
         </div>
 
