@@ -7,6 +7,22 @@ const Hero = () => {
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const [avatarUrl, setAvatarUrl] = useState("/profile.png");
+
+  useEffect(() => {
+    const fetchGitHubProfile = async () => {
+      try {
+        const response = await fetch("https://api.github.com/users/nattapong2005");
+        const data = await response.json();
+        if (data.avatar_url) {
+          setAvatarUrl(data.avatar_url);
+        }
+      } catch (error) {
+        console.error("Error fetching GitHub profile:", error);
+      }
+    };
+    fetchGitHubProfile();
+  }, []);
 
   useEffect(() => {
     const handleType = () => {
@@ -77,8 +93,8 @@ const Hero = () => {
           </p>
         </div>
 
-        <p className="text-slate-400 text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed mb-12 sm:mb-16 mx-auto lg:mx-0 opacity-80">
-          นักพัฒนารุ่นใหม่วัย 20 ปี ผู้หลงใหลในการแก้ปัญหาด้วยเทคโนโลยี และมุ่งมั่นที่จะพัฒนาซอฟต์แวร์ที่ตอบโจทย์ผู้ใช้งานจริง
+        <p className="text-slate-400 text-base sm:text-lg lg:text-xl max-w-prose lg:max-w-2xl leading-relaxed mb-10 sm:mb-14 lg:mb-16 mx-auto lg:mx-0 opacity-80 text-balance">
+           I’m currently learning Next.js & TypeScript to build modern, high-performance web applications.
         </p>
 
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6">
@@ -95,9 +111,9 @@ const Hero = () => {
         <div className="relative group">
           <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full border border-white/5 overflow-hidden shadow-2xl bg-dark/40 p-2 relative">
             <img
-              src="/profile.png"
+              src={avatarUrl}
               alt="Nattapong Nakaom"
-              className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700 opacity-90 group-hover:opacity-100"
+              className="w-full h-full object-cover rounded-full  hover:grayscale-0 transition-all duration-700 opacity-90 group-hover:opacity-100"
             />
           </div>
           <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary/20 to-secondary/20 blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>

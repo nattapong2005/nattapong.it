@@ -15,45 +15,41 @@ const Activities = () => {
         <div className="relative pl-6">
           <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-yellow-500 ring-4 ring-dark"></div>
           <div className="text-xs text-yellow-500 font-bold mb-1">
-            ปีการศึกษา 2566 (Mockup)
+           เหรียญทอง
           </div>
           <h4 className="text-lg font-bold text-white mb-1">
-            เหรียญทอง การแข่งขันทักษะการเขียนโปรแกรมระดับชาติ
+            การแข่งขันทักษะเทคโนโลยีเครือข่ายระดับชาติ
           </h4>
           <p className="text-slate-400 text-sm">
-            การแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์และอัลกอริทึม จัดโดยสถาบันอาชีวศึกษา
-            แสดงถึงความสามารถในการแก้ปัญหา (Problem Solving)
-            ภายใต้เวลาที่จำกัด
+            รางวัลรองชนะเลิศอันดับ 3 การแข่งขันทักษะวิชาชีพ ทักษะเทคโนโลยีเครือข่าย ประจำปีการศึกษา 2567 ณ วิทยาลัยเทคนิคตรัง
           </p>
         </div>
 
         {/* Timeline Item 2 */}
         <div className="relative pl-6">
-          <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-dark"></div>
-          <div className="text-xs text-primary font-bold mb-1">
-            ปีการศึกษา 2565 (Mockup)
+          <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-yellow-500 ring-4 ring-dark"></div>
+          <div className="text-xs text-secondary font-bold mb-1">
+           เหรียญเงิน
           </div>
           <h4 className="text-lg font-bold text-white mb-1">
-            หัวหน้าทีมพัฒนาเว็บไซต์ / ชมรม IT ของสถาบัน
+            การแข่งขันทักษะเทคโนโลยีเครือข่ายระดับภาคกลาง
           </h4>
           <p className="text-slate-400 text-sm">
-            เป็นตัวหลักในการพัฒนา Web Application ของชมรม และสอนพื้นฐานการเขียนเว็บ
-            (HTML/CSS) ให้กับนักเรียนรุ่นน้อง
+            รางวัลรองชนะเลิศอันดับ 1 การแข่งขันทักษะวิชาชีพ ทักษะเทคโนโลยีเครือข่าย ประจำปีการศึกษา 2567 ณ วิทยาลัยเทคนิคพระนครศรีอยุธยา
           </p>
         </div>
 
         {/* Timeline Item 3 */}
         <div className="relative pl-6">
-          <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-secondary ring-4 ring-dark"></div>
-          <div className="text-xs text-secondary font-bold mb-1">
-            ปีการศึกษา 2565 (Mockup)
+          <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-yellow-500 ring-4 ring-dark"></div>
+          <div className="text-xs text-gray-500 font-bold mb-1">
+           เหรียญเงิน
           </div>
           <h4 className="text-lg font-bold text-white mb-1">
-            เข้าร่วมอบรมค่าย AI & Data Science Introduction
+            การแข่งขันทักษะเทคโนโลยีเครือข่ายระดับภาคกลาง
           </h4>
           <p className="text-slate-400 text-sm">
-            ค่ายวิชาการเพื่อทำความเข้าใจหลักการทำงานของ Artificial Intelligence
-            และการประมวลผลข้อมูลขนาดใหญ่
+            รางวัลรองชนะเลิศอันดับ 2 การแข่งขันทักษะวิชาชีพ ทักษะเทคโนโลยีเครือข่าย ประจำปีการศึกษา 2567 ณ วิทยาลัยเทคนิคสุพรรณบุรี
           </p>
         </div>
       </div>
